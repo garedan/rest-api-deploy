@@ -77,3 +77,20 @@ Content-Type: application/json
 
 ### delete
 DELETE http://localhost:1234/products/8175b16c-20bb-4f2c-9274-b8e89d06bcf4
+
+### remoto
+POST https://rest-api-deploy-76t2-dev.fl0.io/products
+Content-Type: application/json
+
+{
+        "sql": "SELECT * FROM products",
+        "title": "Remera para hombre entallada casual premium",
+        "price": 22,
+        "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+        "category": "ropa de hombre",
+        "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+        "rating": {
+            "rate": 4,
+            "count": 59
+        }
+}
