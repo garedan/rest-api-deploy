@@ -1,5 +1,5 @@
 ### Recuperar todas las películas
-GET http://localhost:1234/movies
+GET http://localhost:1234/products
 
 ### Recuperar una película por id
 GET http://localhost:1234/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
@@ -7,8 +7,42 @@ GET http://localhost:1234/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
 ### Recuperar todas las películas por un género
 GET http://localhost:1234/movies?genre=ACTION
 
+### Crear articulo
+POST http://localhost:1234/products
+Content-Type: application/json
+
+{
+        "sql": "SELECT * FROM products",
+        "title": "Mochila 10",
+        "price": 109,
+        "description": "La mochila perfecta para el día a día y los paseos por el bosque.",
+        "category": "ropa de hombre",
+        "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+        "rating": {
+            "rate": 4,
+            "count": 120
+        }
+}
+
 ### Crear una película con POST
 POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "sql": "SELECT * FROM users",
+  "title": "The Godfather 2",
+  "year": 1975,
+  "director": "Francis Ford Coppola",
+  "duration": 175,
+  "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+  "genre": [
+    "Crime",
+    "Drama"
+  ]
+}
+
+#### Online Create
+POST https://rest-api-deploy-76t2-dev.fl0.io/movies
 Content-Type: application/json
 
 {
@@ -31,3 +65,15 @@ Content-Type: application/json
 {
   "year": 2022
 }
+
+
+### update 
+PATCH http://localhost:1234/movies/70a5b5e1-4b0a-4c5d-a729-2e79a2e1388e
+Content-Type: application/json
+
+{
+  "title": "Mochila 5 updated"
+}
+
+### delete
+DELETE http://localhost:1234/products/8175b16c-20bb-4f2c-9274-b8e89d06bcf4
