@@ -78,7 +78,7 @@ Content-Type: application/json
 ### delete
 DELETE http://localhost:1234/products/8175b16c-20bb-4f2c-9274-b8e89d06bcf4
 
-### remoto
+### remoto cambio
 POST https://rest-api-deploy-76t2-dev.fl0.io/products
 Content-Type: application/json
 
