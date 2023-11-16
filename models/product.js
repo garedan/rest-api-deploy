@@ -40,13 +40,13 @@ export class ProductModel {
 
     // Esto no sería REST, porque estamos guardando
     // el estado de la aplicación en memoria
-    var json = JSON.stringify(newProduct);
+    //var json = JSON.stringify(newProduct);
     products.push(newProduct);
 
-    const jsonString = fs.readFileSync("./data.json");
+    /* const jsonString = fs.readFileSync("./data.json");
     const jsonObject = JSON.parse(jsonString);
     jsonObject.push(newProduct);
-    fs.writeFileSync("./data.json", JSON.stringify(jsonObject));
+    fs.writeFileSync("./data.json", JSON.stringify(jsonObject)); */
     return newProduct;
   }
 
