@@ -1,7 +1,7 @@
 import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 const products = require("../data.json");
-const fs = require("fs");
+import { randomUUID } from "node:crypto";
 
 export class ProductModel {
   static async getAll({ title }) {
@@ -26,27 +26,15 @@ export class ProductModel {
 
   static async create(input) {
     // en base de datos
-    let newProduct = {
-      id: Math.floor(Math.random() * 100 + 1), // uuid v4
+    const newProduct = {
+      id: randomUUID(), // uuid v4
       ...input,
     };
-    const product = products.find((product) => product.id === newProduct.id);
-    while (product) {
-      newProduct = {
-        id: Math.floor(Math.random() * 100 + 1), // uuid v4
-        ...input,
-      };
-    }
 
     // Esto no sería REST, porque estamos guardando
     // el estado de la aplicación en memoria
-    //var json = JSON.stringify(newProduct);
     products.push(newProduct);
 
-    /* const jsonString = fs.readFileSync("./data.json");
-    const jsonObject = JSON.parse(jsonString);
-    jsonObject.push(newProduct);
-    fs.writeFileSync("./data.json", JSON.stringify(jsonObject)); */
     return newProduct;
   }
 
