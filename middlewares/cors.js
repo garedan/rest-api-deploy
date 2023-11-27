@@ -5,6 +5,7 @@ const ACCEPTED_ORIGINS = [
   "http://localhost:1234",
   "https://movies.com",
   "http://localhost:5173",
+  "https://proyecto-integrador-reactjs-ap.vercel.app",
 ];
 
 export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGINS } = {}) =>
